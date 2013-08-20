@@ -1,0 +1,68 @@
+<xml>
+	<applicationID><![CDATA[cadet2D]]></applicationID>
+	
+	<fileSystemProvider environment="air"		    type="local" 		    id="cadet.local" 		    	label="Cadet2D.local"     folderName="Cadet2D" />
+	<fileSystemProvider environment="browser" 	type="sharedObject" id="cadet.sharedObject" 	label="Cadet2D.so" />
+	<fileSystemProvider environment="browser" 	type="url" 			    id="cadet.url" 			      label="Cadet2D.url" baseURL="files" /><!--visible="false" />-->
+	
+	<extension url="extensions/Default_Ext.swf" />
+	<extension url="extensions/CadetEditor_Ext.swf" />
+	<extension url="extensions/CadetEditor_Ext_Main.swf" />
+	<extension url="extensions/CadetEditor_Ext_2DS.swf" />
+	<extension url="extensions/CadetEditor_Ext_2DS_Main.swf" />
+	<extension url="extensions/CadetEditor_Ext_2DS_Geom.swf" />
+	<extension url="extensions/CadetEditor_Ext_2DS_Geom_Main.swf" />
+	<extension url="extensions/CadetEditor_Ext_2DS_Box2D.swf" />
+	<extension url="extensions/CadetEditor_Ext_2DS_Box2D_Main.swf" />
+	
+	<manifest>
+		<url><![CDATA[extensions/manifests/Core.xml]]></url>
+	</manifest>
+
+	<manifest>
+		<url><![CDATA[extensions/manifests/Cadet.xml]]></url>
+	</manifest>
+
+	<manifest>
+		<url><![CDATA[extensions/manifests/Cadet2D.xml]]></url>
+	</manifest>
+
+	<manifest>
+		<url><![CDATA[extensions/manifests/Cadet2DBox2D.xml]]></url>
+	</manifest>
+
+	<manifest>
+		<url><![CDATA[extensions/manifests/CadetEditor.xml]]></url>
+	</manifest>
+	
+	<!--  File templates  -->
+
+	<template>
+		<label><![CDATA[Barebones 2D]]></label>
+		<description><![CDATA[Creates a blank Cadet Editor scene with a Renderer2D.]]></description>
+		<url><![CDATA[extensions/fileTemplates/barebones2DS.cdt2d]]></url>
+		<icon>cadetEditor.assets.CadetEditorIcons::BlankTemplateIcon</icon>
+	</template>
+
+	<template>
+		<label><![CDATA[Barebones 2D with Physics]]></label>
+		<description><![CDATA[Creates a Cadet Editor scene with a Renderer2D and a Physics Process.]]></description>
+		<url><![CDATA[extensions/fileTemplates/barebones2DSPhysics.cdt2d]]></url>
+		<icon>cadetEditor.assets.CadetEditorIcons::BlankTemplateIcon</icon>
+	</template>
+	
+  <template>
+		<label><![CDATA[Particles Demo]]></label>
+		<description><![CDATA[A few examples of particle systems.]]></description>
+		<url><![CDATA[extensions/fileTemplates/particles.cdt2d]]></url>
+		<icon>cadetEditor.assets.CadetEditorIcons::BlankTemplateIcon</icon>
+	</template>
+	
+  <template>
+		<label><![CDATA[Physics Demo]]></label>
+		<description><![CDATA[A simple physics demo using Cadet2DBox2D.]]></description>
+		<url><![CDATA[extensions/fileTemplates/simple_physics_demo.cdt2d]]></url>
+		<icon>cadetEditor.assets.CadetEditorIcons::BlankTemplateIcon</icon>
+	</template>
+	
+</xml>

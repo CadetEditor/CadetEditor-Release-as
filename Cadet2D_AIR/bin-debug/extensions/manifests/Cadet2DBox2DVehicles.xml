@@ -1,0 +1,5 @@
+<manifest prefix="cadet2DBox2DVehicles" url="www.unwrong.com/cadet2DBox2DVehicles/1.0.0">
+  <classMap name="VehicleSideViewBehaviour" class="cadet2DBox2DVehicles.components.behaviours.VehicleSideViewBehaviour"/>
+  <classMap name="VehiclePlanViewBehaviour" class="cadet2DBox2DVehicles.components.behaviours.VehiclePlanViewBehaviour"/>
+  <classMap name="VehicleUserControlBehaviour" class="cadet2DBox2DVehicles.components.behaviours.VehicleUserControlBehaviour"/>
+</manifest>

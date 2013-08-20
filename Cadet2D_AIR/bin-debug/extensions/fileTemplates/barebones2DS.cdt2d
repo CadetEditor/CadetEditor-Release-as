@@ -1,0 +1,8 @@
+<cadet:CadetScene x:name="scene" x:id="2" name="Component" xmlns:cadet="www.unwrong.com/cadet/1.0.0" xmlns:x="core.app.core.serialization.Serializer" xmlns:cadet2D="www.unwrong.com/cadet2D/1.0.0" xmlns:core="www.unwrong.com/core/1.0.0">
+  <core:ArrayCollection x:name="children" x:id="3">
+    <cadet2D:Renderer2D x:name="0" x:id="5" name="2D Renderer" />
+  </core:ArrayCollection>
+  <core:DependencyManager x:name="dependencyManager" x:id="7">
+    <core:ArrayCollection x:name="dependencyNodes" x:id="8"/>
+  </core:DependencyManager>
+</cadet:CadetScene>
