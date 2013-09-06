@@ -1,158 +1,158 @@
-<cadet:CadetScene x:id="0" timeScale="1" framerate="60" name="Scene" xmlns:cadet="www.unwrong.com/cadet/1.0.0" xmlns:x="core.app.core.serialization.Serializer" xmlns:core="www.unwrong.com/core/1.0.0" xmlns:cadet2D="www.unwrong.com/cadet2D/1.0.0" xmlns:cadet2DBox2D="www.unwrong.com/cadet2DBox2D/1.0.0" xmlns:cadet2DBox2DVehicles="www.unwrong.com/cadet2DBox2DVehicles/1.0.0">
+<cadet:CadetScene x:id="0" framerate="60" timeScale="1" name="Scene" xmlns:cadet="www.unwrong.com/cadet/1.0.0" xmlns:x="core.app.core.serialization.Serializer" xmlns:core="www.unwrong.com/core/1.0.0" xmlns:cadet2D="www.unwrong.com/cadet2D/1.0.0" xmlns:cadet2DBox2D="www.unwrong.com/cadet2DBox2D/1.0.0" xmlns:cadet2DBox2DVehicles="www.unwrong.com/cadet2DBox2DVehicles/1.0.0">
   <core:ArrayCollection x:name="children" x:id="1">
-    <cadet2D:Renderer2D x:name="0" x:id="2" depthSort="0" name="Starling Renderer"/>
-    <cadet2DBox2D:PhysicsProcess x:name="1" x:id="3" numVelocityIterations="2" numIterations="2" numPositionIterations="2" scaleFactor="0.01" name="PhysicsProcess" gravity="6"/>
-    <cadet2D:TrackCamera2DProcess x:name="2" x:id="4" maxSpeed="100" minSpeed="0" minZoom="0.25" ease="0.2" maxZoom="1" name="TrackCamera2DProcess">
+    <cadet2D:Renderer2D x:name="0" x:id="2" depthSort="0" allowScale="0" name="Starling Renderer"/>
+    <cadet2DBox2D:PhysicsProcess x:name="1" x:id="3" numIterations="2" numPositionIterations="2" numVelocityIterations="2" name="PhysicsProcess" gravity="6" scaleFactor="0.01"/>
+    <cadet2D:TrackCamera2DProcess x:name="2" x:id="4" ease="0.2" minZoom="0.25" minSpeed="0" maxZoom="1" maxSpeed="100" name="TrackCamera2DProcess">
       <cadet:ComponentContainer x:name="target" x:id="5" name="chassis">
         <core:ArrayCollection x:name="children" x:id="6">
           <cadet2D:PolygonGeometry x:name="0" x:id="7" name="PolygonGeometry" vertices="0,0:110,-20:90,50:40,50"/>
-          <cadet2D:GeometrySkin x:name="1" x:id="8" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-            <cadet2D:Transform2D x:name="transform2D" x:id="9" matrix="1,0,0,1,100,100" name="chassis Transform2D"/>
+          <cadet2D:GeometrySkin x:name="1" x:id="8" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+            <cadet2D:Transform2D x:name="transform2D" x:id="9" name="chassis Transform2D" matrix="1,0,0,1,100,100"/>
           </cadet2D:GeometrySkin>
           <x:Ref x:name="2" x:id="9"/>
-          <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="10" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="0"/>
+          <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="10" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="0" maskBits="4294967295" name="RigidBodyBehaviour"/>
         </core:ArrayCollection>
       </cadet:ComponentContainer>
     </cadet2D:TrackCamera2DProcess>
     <cadet2D:InputProcess2D x:name="3" x:id="11" name="InputProcess">
       <core:ArrayCollection x:name="children" x:id="12">
-        <cadet:KeyboardInputMapping x:name="0" x:id="13" input="UP" name="ACCELERATE"/>
-        <cadet:KeyboardInputMapping x:name="1" x:id="14" input="DOWN" name="BRAKE"/>
-        <cadet:KeyboardInputMapping x:name="2" x:id="15" input="LEFT" name="STEER LEFT"/>
-        <cadet:KeyboardInputMapping x:name="3" x:id="16" input="RIGHT" name="STEER RIGHT"/>
+        <cadet:KeyboardInputMapping x:name="0" x:id="13" name="ACCELERATE" input="UP"/>
+        <cadet:KeyboardInputMapping x:name="1" x:id="14" name="BRAKE" input="DOWN"/>
+        <cadet:KeyboardInputMapping x:name="2" x:id="15" name="STEER LEFT" input="LEFT"/>
+        <cadet:KeyboardInputMapping x:name="3" x:id="16" name="STEER RIGHT" input="RIGHT"/>
       </core:ArrayCollection>
     </cadet2D:InputProcess2D>
     <cadet:ComponentContainer x:name="4" x:id="17" name="motorbike">
       <core:ArrayCollection x:name="children" x:id="18">
-        <cadet2DBox2DVehicles:VehicleUserControlBehaviour x:name="0" x:id="19" accelerateMapping="ACCELERATE" steerLeftMapping="STEER LEFT" steerRightMapping="STEER RIGHT" accelerationEaseUp="1" brakeMapping="BRAKE" steeringEaseUp="1" accelerationEaseDown="1" brakeEaseUp="1" steeringEaseDown="1" breakEaseDown="1" name="VehicleUserControlBehaviour"/>
-        <cadet2DBox2DVehicles:VehicleSideViewBehaviour x:name="1" x:id="20" brakeTorque="1" maxSpeed="60" maxTorque="-2" maxChasisTorque="8" name="VehicleSideViewBehaviour" transmission="0">
-          <cadet:ComponentContainer x:name="rearDriveShaft" x:id="21" name="rearAxle">
+        <cadet2DBox2DVehicles:VehicleUserControlBehaviour x:name="0" x:id="19" brakeMapping="BRAKE" steerRightMapping="STEER RIGHT" accelerateMapping="ACCELERATE" steeringEaseUp="1" brakeEaseUp="1" accelerationEaseDown="1" steerLeftMapping="STEER LEFT" breakEaseDown="1" steeringEaseDown="1" accelerationEaseUp="1" name="VehicleUserControlBehaviour"/>
+        <cadet2DBox2DVehicles:VehicleSideViewBehaviour x:name="1" x:id="20" brakeTorque="1" maxSpeed="60" maxTorque="-2" maxChasisTorque="8" name="VehicleBehaviour (SideView)" transmission="0">
+          <cadet:ComponentContainer x:name="frontDriveShaft" x:id="21" name="frontAxle">
             <core:ArrayCollection x:name="children" x:id="22">
               <cadet2D:Pin x:name="0" x:id="23" name="Pin">
-                <cadet2D:Vertex x:name="localPos" x:id="24" x="10" y="10"/>
-                <cadet2D:Transform2D x:name="transformB" x:id="25" matrix="1,0,0,1,90,160" name="rearWheel Transform2D"/>
-                <cadet2D:Transform2D x:name="transformA" x:id="26" matrix="1,0,0,1,80,150" name="rearWheelBlock Transform2D"/>
+                <cadet2D:Vertex x:name="localPos" x:id="24" y="10" x="10"/>
+                <cadet2D:Transform2D x:name="transformA" x:id="25" name="frontWheelBlock Transform2D" matrix="1,0,0,1,230,150"/>
+                <cadet2D:Transform2D x:name="transformB" x:id="26" name="frontWheel Transform2D" matrix="1,0,0,1,240,160"/>
               </cadet2D:Pin>
-              <cadet2D:Transform2D x:name="1" x:id="27" matrix="1,0,0,1,85,155" name="Transform2D"/>
-              <cadet2D:PinSkin x:name="2" x:id="28" touchable="1" fillColor="16777215" width="0" height="0" fillAlpha="0.5" name="PinSkin" visible="1" radius="5">
+              <cadet2D:Transform2D x:name="1" x:id="27" name="Transform2D" matrix="1,0,0,1,240,160"/>
+              <cadet2D:PinSkin x:name="2" x:id="28" touchable="1" radius="5" height="0" visible="1" width="0" fillColor="16777215" fillAlpha="0.5" name="PinSkin">
                 <x:Ref x:name="transform2D" x:id="27"/>
               </cadet2D:PinSkin>
-              <cadet2DBox2D:RevoluteJointBehaviour x:name="3" x:id="29" collideConnected="0" enableMotor="0" maxMotorTorque="1" motorSpeed="1" name="RevoluteJointBehaviour" upperAngle="0" lowerAngle="0" enableLimit="0"/>
-            </core:ArrayCollection>
-          </cadet:ComponentContainer>
-          <cadet:ComponentContainer x:name="frontDriveShaft" x:id="30" name="frontAxle">
-            <core:ArrayCollection x:name="children" x:id="31">
-              <cadet2D:Pin x:name="0" x:id="32" name="Pin">
-                <cadet2D:Vertex x:name="localPos" x:id="33" x="10" y="10"/>
-                <cadet2D:Transform2D x:name="transformB" x:id="34" matrix="1,0,0,1,240,160" name="frontWheel Transform2D"/>
-                <cadet2D:Transform2D x:name="transformA" x:id="35" matrix="1,0,0,1,230,150" name="frontWheelBlock Transform2D"/>
-              </cadet2D:Pin>
-              <cadet2D:Transform2D x:name="1" x:id="36" matrix="1,0,0,1,235,155" name="Transform2D"/>
-              <cadet2D:PinSkin x:name="2" x:id="37" touchable="1" fillColor="16777215" width="0" height="0" fillAlpha="0.5" name="PinSkin" visible="1" radius="5">
-                <x:Ref x:name="transform2D" x:id="36"/>
-              </cadet2D:PinSkin>
-              <cadet2DBox2D:RevoluteJointBehaviour x:name="3" x:id="38" collideConnected="0" enableMotor="0" maxMotorTorque="1" motorSpeed="1" name="RevoluteJointBehaviour" upperAngle="0" lowerAngle="0" enableLimit="0"/>
+              <cadet2DBox2D:RevoluteJointBehaviour x:name="3" x:id="29" collideConnected="0" motorSpeed="1" name="RevoluteJointBehaviour" upperAngle="0" enableMotor="0" enableLimit="0" maxMotorTorque="1" lowerAngle="0"/>
             </core:ArrayCollection>
           </cadet:ComponentContainer>
           <x:Ref x:name="chasis" x:id="5"/>
+          <cadet:ComponentContainer x:name="rearDriveShaft" x:id="30" name="rearAxle">
+            <core:ArrayCollection x:name="children" x:id="31">
+              <cadet2D:Pin x:name="0" x:id="32" name="Pin">
+                <cadet2D:Vertex x:name="localPos" x:id="33" y="10" x="10"/>
+                <cadet2D:Transform2D x:name="transformA" x:id="34" name="rearWheelBlock Transform2D" matrix="1,0,0,1,80,150"/>
+                <cadet2D:Transform2D x:name="transformB" x:id="35" name="rearWheel Transform2D" matrix="1,0,0,1,90,160"/>
+              </cadet2D:Pin>
+              <cadet2D:Transform2D x:name="1" x:id="36" name="Transform2D" matrix="1,0,0,1,90,160"/>
+              <cadet2D:PinSkin x:name="2" x:id="37" touchable="1" radius="5" height="0" visible="1" width="0" fillColor="16777215" fillAlpha="0.5" name="PinSkin">
+                <x:Ref x:name="transform2D" x:id="36"/>
+              </cadet2D:PinSkin>
+              <cadet2DBox2D:RevoluteJointBehaviour x:name="3" x:id="38" collideConnected="0" motorSpeed="1" name="RevoluteJointBehaviour" upperAngle="0" enableMotor="0" enableLimit="0" maxMotorTorque="1" lowerAngle="0"/>
+            </core:ArrayCollection>
+          </cadet:ComponentContainer>
         </cadet2DBox2DVehicles:VehicleSideViewBehaviour>
         <x:Ref x:name="2" x:id="5"/>
         <cadet:ComponentContainer x:name="3" x:id="39" name="frontWheel">
           <core:ArrayCollection x:name="children" x:id="40">
             <cadet2D:CircleGeometry x:name="0" x:id="41" x="0" y="0" name="Circle" radius="30"/>
-            <cadet2D:GeometrySkin x:name="1" x:id="42" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-              <x:Ref x:name="transform2D" x:id="34"/>
+            <cadet2D:GeometrySkin x:name="1" x:id="42" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+              <x:Ref x:name="transform2D" x:id="26"/>
             </cadet2D:GeometrySkin>
-            <x:Ref x:name="2" x:id="34"/>
-            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="43" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="0"/>
+            <x:Ref x:name="2" x:id="26"/>
+            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="43" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="0" maskBits="4294967295" name="RigidBodyBehaviour"/>
           </core:ArrayCollection>
         </cadet:ComponentContainer>
         <cadet:ComponentContainer x:name="4" x:id="44" name="rearWheel">
           <core:ArrayCollection x:name="children" x:id="45">
             <cadet2D:CircleGeometry x:name="0" x:id="46" x="0" y="0" name="Circle" radius="30"/>
-            <cadet2D:GeometrySkin x:name="1" x:id="47" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-              <x:Ref x:name="transform2D" x:id="25"/>
+            <cadet2D:GeometrySkin x:name="1" x:id="47" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+              <x:Ref x:name="transform2D" x:id="35"/>
             </cadet2D:GeometrySkin>
-            <x:Ref x:name="2" x:id="25"/>
-            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="48" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="0"/>
+            <x:Ref x:name="2" x:id="35"/>
+            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="48" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="0" maskBits="4294967295" name="RigidBodyBehaviour"/>
           </core:ArrayCollection>
         </cadet:ComponentContainer>
         <cadet:ComponentContainer x:name="5" x:id="49" name="frontWheelBlock">
           <core:ArrayCollection x:name="children" x:id="50">
-            <cadet2D:RectangleGeometry x:name="0" x:id="51" width="20" vertices="0,0:20,0:20,20:0,20" height="20" name="RectangleGeometry"/>
-            <cadet2D:GeometrySkin x:name="1" x:id="52" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-              <x:Ref x:name="transform2D" x:id="35"/>
+            <cadet2D:RectangleGeometry x:name="0" x:id="51" vertices="0,0:20,0:20,20:0,20" height="20" width="20" name="RectangleGeometry"/>
+            <cadet2D:GeometrySkin x:name="1" x:id="52" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+              <x:Ref x:name="transform2D" x:id="25"/>
             </cadet2D:GeometrySkin>
-            <x:Ref x:name="2" x:id="35"/>
-            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="53" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="0"/>
+            <x:Ref x:name="2" x:id="25"/>
+            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="53" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="0" maskBits="4294967295" name="RigidBodyBehaviour"/>
           </core:ArrayCollection>
         </cadet:ComponentContainer>
         <cadet:ComponentContainer x:name="6" x:id="54" name="rearWheelBlock">
           <core:ArrayCollection x:name="children" x:id="55">
-            <cadet2D:RectangleGeometry x:name="0" x:id="56" width="20" vertices="0,0:20,0:20,20:0,20" height="20" name="RectangleGeometry"/>
-            <cadet2D:GeometrySkin x:name="1" x:id="57" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-              <x:Ref x:name="transform2D" x:id="26"/>
+            <cadet2D:RectangleGeometry x:name="0" x:id="56" vertices="0,0:20,0:20,20:0,20" height="20" width="20" name="RectangleGeometry"/>
+            <cadet2D:GeometrySkin x:name="1" x:id="57" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+              <x:Ref x:name="transform2D" x:id="34"/>
             </cadet2D:GeometrySkin>
-            <x:Ref x:name="2" x:id="26"/>
-            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="58" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="0"/>
+            <x:Ref x:name="2" x:id="34"/>
+            <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="58" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="0" maskBits="4294967295" name="RigidBodyBehaviour"/>
           </core:ArrayCollection>
         </cadet:ComponentContainer>
-        <x:Ref x:name="7" x:id="30"/>
-        <x:Ref x:name="8" x:id="21"/>
+        <x:Ref x:name="7" x:id="21"/>
+        <x:Ref x:name="8" x:id="30"/>
         <cadet:ComponentContainer x:name="9" x:id="59" name="frontSuspension">
           <core:ArrayCollection x:name="children" x:id="60">
             <cadet2D:Connection x:name="0" x:id="61" name="Connection">
-              <x:Ref x:name="transformB" x:id="35"/>
+              <cadet2D:Vertex x:name="localPosA" x:id="62" y="0" x="90"/>
               <x:Ref x:name="transformA" x:id="9"/>
-              <cadet2D:Vertex x:name="localPosB" x:id="62" x="10" y="10"/>
-              <cadet2D:Vertex x:name="localPosA" x:id="63" x="90" y="0"/>
+              <x:Ref x:name="transformB" x:id="25"/>
+              <cadet2D:Vertex x:name="localPosB" x:id="63" y="10" x="10"/>
             </cadet2D:Connection>
-            <cadet2D:ConnectionSkin x:name="1" x:id="64" lineThickness="1" touchable="1" width="10" height="0" lineColor="16777215" lineAlpha="0.5" name="ConnectionSkin" visible="1" radius="10"/>
-            <cadet2DBox2D:PrismaticJointBehaviour x:name="2" x:id="65" enableMotor="1" motorSpeed="1" name="PrismaticJointBehaviour" autoCalculateLimits="1" collideConnected="1" upperLimit="10" lowerLimit="0" enableLimit="1" maxMotorForce="10"/>
+            <cadet2D:ConnectionSkin x:name="1" x:id="64" touchable="1" radius="10" lineAlpha="0.5" lineColor="16777215" lineThickness="1" height="0" visible="1" width="10" name="ConnectionSkin"/>
+            <cadet2DBox2D:PrismaticJointBehaviour x:name="2" x:id="65" motorSpeed="1" name="PrismaticJointBehaviour" autoCalculateLimits="1" upperLimit="10" lowerLimit="0" maxMotorForce="10" enableMotor="1" enableLimit="1" collideConnected="1"/>
           </core:ArrayCollection>
         </cadet:ComponentContainer>
         <cadet:ComponentContainer x:name="10" x:id="66" name="rearSuspension">
           <core:ArrayCollection x:name="children" x:id="67">
             <cadet2D:Connection x:name="0" x:id="68" name="Connection">
-              <x:Ref x:name="transformB" x:id="26"/>
+              <cadet2D:Vertex x:name="localPosA" x:id="69" y="10" x="20"/>
               <x:Ref x:name="transformA" x:id="9"/>
-              <cadet2D:Vertex x:name="localPosB" x:id="69" x="10" y="10"/>
-              <cadet2D:Vertex x:name="localPosA" x:id="70" x="20" y="10"/>
+              <x:Ref x:name="transformB" x:id="34"/>
+              <cadet2D:Vertex x:name="localPosB" x:id="70" y="10" x="10"/>
             </cadet2D:Connection>
-            <cadet2D:ConnectionSkin x:name="1" x:id="71" lineThickness="1" touchable="1" width="10" height="0" lineColor="16777215" lineAlpha="0.5" name="ConnectionSkin" visible="1" radius="10"/>
-            <cadet2DBox2D:PrismaticJointBehaviour x:name="2" x:id="72" enableMotor="1" motorSpeed="1" name="PrismaticJointBehaviour" autoCalculateLimits="1" collideConnected="1" upperLimit="10" lowerLimit="0" enableLimit="1" maxMotorForce="10"/>
+            <cadet2D:ConnectionSkin x:name="1" x:id="71" touchable="1" radius="10" lineAlpha="0.5" lineColor="16777215" lineThickness="1" height="0" visible="1" width="10" name="ConnectionSkin"/>
+            <cadet2DBox2D:PrismaticJointBehaviour x:name="2" x:id="72" motorSpeed="1" name="PrismaticJointBehaviour" autoCalculateLimits="1" upperLimit="10" lowerLimit="0" maxMotorForce="10" enableMotor="1" enableLimit="1" collideConnected="1"/>
           </core:ArrayCollection>
         </cadet:ComponentContainer>
       </core:ArrayCollection>
     </cadet:ComponentContainer>
     <cadet:ComponentContainer x:name="5" x:id="73" name="floor">
       <core:ArrayCollection x:name="children" x:id="74">
-        <cadet2D:RectangleGeometry x:name="0" x:id="75" width="3000" vertices="0,0:3000,0:3000,20:0,20" height="20" name="RectangleGeometry"/>
-        <cadet2D:GeometrySkin x:name="1" x:id="76" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-          <cadet2D:Transform2D x:name="transform2D" x:id="77" matrix="1,0,0,1,0,240" name="Transform2D"/>
+        <cadet2D:RectangleGeometry x:name="0" x:id="75" vertices="0,0:3000,0:3000,20:0,20" height="20" width="3000" name="RectangleGeometry"/>
+        <cadet2D:GeometrySkin x:name="1" x:id="76" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+          <cadet2D:Transform2D x:name="transform2D" x:id="77" name="Transform2D" matrix="1,0,0,1,0,240"/>
         </cadet2D:GeometrySkin>
         <x:Ref x:name="2" x:id="77"/>
-        <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="78" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="1"/>
+        <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="78" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="1" maskBits="4294967295" name="RigidBodyBehaviour"/>
       </core:ArrayCollection>
     </cadet:ComponentContainer>
     <cadet:ComponentContainer x:name="6" x:id="79" name="leftWall">
       <core:ArrayCollection x:name="children" x:id="80">
-        <cadet2D:RectangleGeometry x:name="0" x:id="81" width="20" vertices="0,0:20,0:20,230:0,230" height="230" name="RectangleGeometry"/>
-        <cadet2D:GeometrySkin x:name="1" x:id="82" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-          <cadet2D:Transform2D x:name="transform2D" x:id="83" matrix="1,0,0,1,10,10" name="Transform2D"/>
+        <cadet2D:RectangleGeometry x:name="0" x:id="81" vertices="0,0:20,0:20,230:0,230" height="230" width="20" name="RectangleGeometry"/>
+        <cadet2D:GeometrySkin x:name="1" x:id="82" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+          <cadet2D:Transform2D x:name="transform2D" x:id="83" name="Transform2D" matrix="1,0,0,1,10,10"/>
         </cadet2D:GeometrySkin>
         <x:Ref x:name="2" x:id="83"/>
-        <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="84" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="1"/>
+        <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="84" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="1" maskBits="4294967295" name="RigidBodyBehaviour"/>
       </core:ArrayCollection>
     </cadet:ComponentContainer>
     <cadet:ComponentContainer x:name="7" x:id="85" name="rightWall">
       <core:ArrayCollection x:name="children" x:id="86">
-        <cadet2D:RectangleGeometry x:name="0" x:id="87" width="20" vertices="0,0:20,0:20,230:0,230" height="230" name="RectangleGeometry"/>
-        <cadet2D:GeometrySkin x:name="1" x:id="88" lineThickness="1" touchable="1" fillColor="16777215" width="0" height="0" drawVertices="0" lineColor="16777215" lineAlpha="0.7" fillAlpha="0.04" name="GeometrySkin" visible="1">
-          <cadet2D:Transform2D x:name="transform2D" x:id="89" matrix="1,0,0,1,2980,10" name="Transform2D"/>
+        <cadet2D:RectangleGeometry x:name="0" x:id="87" vertices="0,0:20,0:20,230:0,230" height="230" width="20" name="RectangleGeometry"/>
+        <cadet2D:GeometrySkin x:name="1" x:id="88" touchable="1" lineAlpha="0.7" lineColor="16777215" lineThickness="1" height="0" visible="1" width="0" fillAlpha="0.04" drawVertices="0" fillColor="16777215" name="GeometrySkin">
+          <cadet2D:Transform2D x:name="transform2D" x:id="89" name="Transform2D" matrix="1,0,0,1,2980,10"/>
         </cadet2D:GeometrySkin>
         <x:Ref x:name="2" x:id="89"/>
-        <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="90" categoryBits="1" maskBits="4294967295" restitution="0.5" friction="0.8" name="RigidBodyBehaviour" density="1" angularDamping="0.1" linearDamping="0.1" fixed="1"/>
+        <cadet2DBox2D:RigidBodyBehaviour x:name="3" x:id="90" categoryBits="1" angularDamping="0.1" linearDamping="0.1" density="1" restitution="0.5" friction="0.8" fixed="1" maskBits="4294967295" name="RigidBodyBehaviour"/>
       </core:ArrayCollection>
     </cadet:ComponentContainer>
   </core:ArrayCollection>
