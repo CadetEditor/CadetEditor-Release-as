@@ -16,7 +16,7 @@ package
 	
 	import core.app.CoreApp;
 	import core.app.util.AsynchronousUtil;
-	import core.editor.operations.f_lube;
+	import core.editor.operations.v_qzok;
 	import core.editor.ui.components.SplashScreen;
 	
 	[SWF(backgroundColor="#15181A", frameRate="60")]
@@ -62,11 +62,11 @@ package
 		{
 			CoreApp.init();
 			
-			var initOperation:f_lube = new f_lube( stage, configURL );
+			var initOperation:v_qzok = new v_qzok( stage, configURL );
 			initOperation.addEventListener(Event.COMPLETE, initCompleteHandler);
 			initOperation.execute();
 			
-			splashScreen.v_gfmi(initOperation);
+			splashScreen.z_myyw(initOperation);
 		}
 		
 		private function initCompleteHandler( event:Event ):void
