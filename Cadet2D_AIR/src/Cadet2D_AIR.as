@@ -66,7 +66,7 @@ package
 			initOperation.addEventListener(Event.COMPLETE, initCompleteHandler);
 			initOperation.execute();
 			
-			splashScreen.z_myyw(initOperation);
+			splashScreen.t_ozqh(initOperation);
 		}
 		
 		private function initCompleteHandler( event:Event ):void
