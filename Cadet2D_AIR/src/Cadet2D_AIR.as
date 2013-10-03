@@ -16,62 +16,62 @@ package
 	
 	import core.app.CoreApp;
 	import core.app.util.AsynchronousUtil;
-	import core.editor.operations.v_qzok;
+	import core.editor.operations.w_okif;
 	import core.editor.ui.components.SplashScreen;
 	
 	[SWF(backgroundColor="#15181A", frameRate="60")]
 	public class Cadet2D_AIR extends Sprite
 	{
-		private var splashWindow		:NativeWindow;
-		private var splashScreen		:SplashScreen;
+		private var g_jxvs		:NativeWindow;
+		private var r_gxip		:SplashScreen;
 		private var configURL			:String = "config.xml";
 		
 		public function Cadet2D_AIR()
 		{
-			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, invokeHandler);
+			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, s_hmjv);
 			
-			var splashWindowInitOptions:NativeWindowInitOptions = new NativeWindowInitOptions();
-			splashWindowInitOptions.systemChrome = "none";
-			splashWindowInitOptions.transparent = true;
-			splashWindow = new NativeWindow(splashWindowInitOptions);
-			splashScreen = new SplashScreen();
-			splashWindow.stage.scaleMode = StageScaleMode.NO_SCALE;
-			splashWindow.stage.align = StageAlign.TOP_LEFT;
-			splashWindow.stage.addChild( splashScreen );
-			splashWindow.width = splashScreen.width;
-			splashWindow.height = splashScreen.height;
+			var h_citi:NativeWindowInitOptions = new NativeWindowInitOptions();
+			h_citi.systemChrome = "none";
+			h_citi.transparent = true;
+			g_jxvs = new NativeWindow(h_citi);
+			r_gxip = new SplashScreen();
+			g_jxvs.stage.scaleMode = StageScaleMode.NO_SCALE;
+			g_jxvs.stage.align = StageAlign.TOP_LEFT;
+			g_jxvs.stage.addChild( r_gxip );
+			g_jxvs.width = r_gxip.width;
+			g_jxvs.height = r_gxip.height;
 			var bounds:Rectangle = Screen.mainScreen.bounds;
-			splashWindow.x = ( bounds.width - splashWindow.width ) >> 1;
-			splashWindow.y = ( bounds.height - splashWindow.height ) >> 1;
-			splashWindow.activate();
+			g_jxvs.x = ( bounds.width - g_jxvs.width ) >> 1;
+			g_jxvs.y = ( bounds.height - g_jxvs.height ) >> 1;
+			g_jxvs.activate();
 			
 			// Don't init straight away, so the invokeHandler has chance to be called.
-			AsynchronousUtil.callLater(initCore);
+			AsynchronousUtil.callLater(u_amvr);
 		}
 		
 		/**
 		 * Handle any commandline parameters.
 		 */
-		private function invokeHandler( event:InvokeEvent ):void
+		private function s_hmjv( event:InvokeEvent ):void
 		{
 			if ( event.arguments.length == 0 ) return;
 			configURL = event.arguments[0];
 		}
 		
-		private function initCore():void
+		private function u_amvr():void
 		{
 			CoreApp.init();
 			
-			var initOperation:v_qzok = new v_qzok( stage, configURL );
+			var initOperation:w_okif = new w_okif( stage, configURL );
 			initOperation.addEventListener(Event.COMPLETE, initCompleteHandler);
 			initOperation.execute();
 			
-			splashScreen.t_ozqh(initOperation);
+			r_gxip.h_tfle(initOperation);
 		}
 		
 		private function initCompleteHandler( event:Event ):void
 		{
-			splashWindow.close();
+			g_jxvs.close();
 			stage.nativeWindow.visible = true;
 			stage.nativeWindow.maximize();
 		}
