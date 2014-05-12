@@ -16,62 +16,62 @@ package
 	
 	import core.app.CoreApp;
 	import core.app.util.AsynchronousUtil;
-	import core.editor.operations.w_okif;
+	import core.editor.operations._dk896;
 	import core.editor.ui.components.SplashScreen;
 	
 	[SWF(backgroundColor="#15181A", frameRate="60")]
 	public class Cadet2D_AIR extends Sprite
 	{
-		private var g_jxvs		:NativeWindow;
-		private var r_gxip		:SplashScreen;
+		private var _fj2513		:NativeWindow;
+		private var _pa935		:SplashScreen;
 		private var configURL			:String = "config.xml";
 		
 		public function Cadet2D_AIR()
 		{
-			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, s_hmjv);
+			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, _fy2820);
 			
-			var h_citi:NativeWindowInitOptions = new NativeWindowInitOptions();
-			h_citi.systemChrome = "none";
-			h_citi.transparent = true;
-			g_jxvs = new NativeWindow(h_citi);
-			r_gxip = new SplashScreen();
-			g_jxvs.stage.scaleMode = StageScaleMode.NO_SCALE;
-			g_jxvs.stage.align = StageAlign.TOP_LEFT;
-			g_jxvs.stage.addChild( r_gxip );
-			g_jxvs.width = r_gxip.width;
-			g_jxvs.height = r_gxip.height;
+			var _td2482:NativeWindowInitOptions = new NativeWindowInitOptions();
+			_td2482.systemChrome = "none";
+			_td2482.transparent = true;
+			_fj2513 = new NativeWindow(_td2482);
+			_pa935 = new SplashScreen();
+			_fj2513.stage.scaleMode = StageScaleMode.NO_SCALE;
+			_fj2513.stage.align = StageAlign.TOP_LEFT;
+			_fj2513.stage.addChild( _pa935 );
+			_fj2513.width = _pa935.width;
+			_fj2513.height = _pa935.height;
 			var bounds:Rectangle = Screen.mainScreen.bounds;
-			g_jxvs.x = ( bounds.width - g_jxvs.width ) >> 1;
-			g_jxvs.y = ( bounds.height - g_jxvs.height ) >> 1;
-			g_jxvs.activate();
+			_fj2513.x = ( bounds.width - _fj2513.width ) >> 1;
+			_fj2513.y = ( bounds.height - _fj2513.height ) >> 1;
+			_fj2513.activate();
 			
 			// Don't init straight away, so the invokeHandler has chance to be called.
-			AsynchronousUtil.callLater(u_amvr);
+			AsynchronousUtil.callLater(_qe826);
 		}
 		
 		/**
 		 * Handle any commandline parameters.
 		 */
-		private function s_hmjv( event:InvokeEvent ):void
+		private function _fy2820( event:InvokeEvent ):void
 		{
 			if ( event.arguments.length == 0 ) return;
 			configURL = event.arguments[0];
 		}
 		
-		private function u_amvr():void
+		private function _qe826():void
 		{
 			CoreApp.init();
 			
-			var initOperation:w_okif = new w_okif( stage, configURL );
+			var initOperation:_dk896 = new _dk896( stage, configURL );
 			initOperation.addEventListener(Event.COMPLETE, initCompleteHandler);
 			initOperation.execute();
 			
-			r_gxip.h_tfle(initOperation);
+			_pa935._xq148(initOperation);
 		}
 		
 		private function initCompleteHandler( event:Event ):void
 		{
-			g_jxvs.close();
+			_fj2513.close();
 			stage.nativeWindow.visible = true;
 			stage.nativeWindow.maximize();
 		}
